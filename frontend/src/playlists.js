@@ -320,7 +320,7 @@ export const playlists = {
         src: "https://res.cloudinary.com/dsplnfii2/video/upload/v1752396536/Hawayein_rqcgzf.ogg",
       },
       { title: "Kyon", year: 2012, singer: "Papon", src: "https://res.cloudinary.com/dsplnfii2/video/upload/v1752396594/Kyon_pr9ehg.ogg" },
-      { title: "Sham", year: 2010, singer: "", src: "/https://res.cloudinary.com/dsplnfii2/video/upload/v1752396668/Sham_kcujea.ogg" },
+      { title: "Sham", year: 2010, singer: "", src: "https://res.cloudinary.com/dsplnfii2/video/upload/v1752396668/Sham_kcujea.ogg" },
     ],
 
     english: [
