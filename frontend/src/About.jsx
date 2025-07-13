@@ -41,16 +41,20 @@ export default function About() {
           This project is made by <span className="font-semibold">The Travellers</span>
         </p>
 
-        {/* Social Icons: reduced bottom margin */}
-        <section className="flex justify-center items-center gap-6 mb-4">
-          <i className="nes-icon instagram is-large"></i>
-          <i className="nes-icon github is-large"></i>
-          <i className="nes-icon gmail is-large"></i>
-          <i className="nes-icon linkedin is-large"></i>
-        </section>
+        {/* GitHub Icon Only with Link */}
+<section className="flex justify-center items-center mb-0 mt-3">
+  <a
+    href="https://github.com/tnvgg/osdc-hack"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-white hover:opacity-80 transition-opacity duration-200"
+  >
+    <i className="nes-icon github is-large"></i>
+  </a>
+</section>
 
       {/* The End + Button with space controlled by space-y */}
- <div className="flex flex-col items-center space-y-12 mt-6">
+ <div className="flex flex-col items-center space-y-12 mt-6 mb-10">
   <motion.h2
     initial={{ opacity: 0, y: 50 }}
     animate={{ opacity: 1, y: 0 }}
@@ -63,7 +67,7 @@ export default function About() {
   <button
     onClick={() => navigate("/")}
     className="px-6 py-2 text-sm sm:text-base font-semibold rounded-full border border-white 
-    hover:bg-white hover:text-black hover:shadow-lg transition-all duration-300 ease-in-out"
+    hover:bg-white hover:text-black hover:shadow-lg transition-all duration-300 ease-in-out "
   >
     ⬅ Back to Home
   </button>
