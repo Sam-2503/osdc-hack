@@ -308,21 +308,20 @@ export const playlists = {
         src: "https://res.cloudinary.com/dsplnfii2/video/upload/v1752396582/Khuda_Jaane_iasz8s.ogg",
       },
       {
-        title: "Pashmina",
-        year: 2016,
-        singer: "Amit Trivedi",
-        src: "https://res.cloudinary.com/dsplnfii2/video/upload/v1752396652/Pashmina_uovgtf.ogg",
+        title: "Guzarish",
+        year: 2006,
+        singer: "Javed Ali",
+        src: "https://res.cloudinary.com/dsplnfii2/video/upload/v1752405677/Full_Video__Guzarish_Ghajini_Aamir_Khan_Asin_A.R._Rahman_Javed_Ali_Sonu_Nigam_t6t15p.mp3",
       },
       {
-        title: "Hawayein",
-        year: 2017,
-        singer: "Arijit Singh",
-        src: "https://res.cloudinary.com/dsplnfii2/video/upload/v1752396536/Hawayein_rqcgzf.ogg",
+        title: "You Are My Soniya",
+        year: 2007,
+        singer: "Sonu Nigam",
+        src: "https://res.cloudinary.com/dsplnfii2/video/upload/v1752406154/You_Are_My_Soniya_-_K3G_Kareena_Kapoor_Hrithik_Roshan_sonunigam_alkayagnik3875_4K_fdllik.mp3",
       },
-      { title: "Kyon", year: 2012, singer: "Papon", src: "https://res.cloudinary.com/dsplnfii2/video/upload/v1752396594/Kyon_pr9ehg.ogg" },
-      { title: "Sham", year: 2010, singer: "", src: "https://res.cloudinary.com/dsplnfii2/video/upload/v1752396668/Sham_kcujea.ogg" },
+      { title: "Tum Se Hi", year: 2006, singer: "Mohit Chauhan", src: "https://res.cloudinary.com/dsplnfii2/video/upload/v1752405485/Tum_Se_Hi_Lyrcial_Jab_We_Met_Kareena_Kapoor_Shahid_Kapoor_Mohit_Chauhan_Pritam_ryrhmm.mp3" },
+      { title: "O Humdum Soniyo Re", year: 2003, singer: "A.R. Rahman", src: "https://res.cloudinary.com/dsplnfii2/video/upload/v1752406456/O_Humdum_Suniyo_Re_Song_Saathiya_Vivek_Oberoi_Rani_Mukerji_A_R_Rahman_Gulzar_KK_Shaan_uzmj38.mp3" },
     ],
-
     english: [
       {
         title: "Oops!... I Did It Again",
@@ -411,7 +410,7 @@ export const playlists = {
         src: "https://res.cloudinary.com/dsplnfii2/video/upload/v1752396536/Hawayein_rqcgzf.ogg",
       },
       { title: "Kyon", year: 2012, singer: "Papon", src: "https://res.cloudinary.com/dsplnfii2/video/upload/v1752396594/Kyon_pr9ehg.ogg" },
-      { title: "Sham", year: 2010, singer: "", src: "/https://res.cloudinary.com/dsplnfii2/video/upload/v1752396668/Sham_kcujea.ogg" },
+      { title: "Pee Loon", year: 2010, singer: "Mohit Chauhan", src: "https://res.cloudinary.com/dsplnfii2/video/upload/v1752405381/FULL_VIDEO__Pee_Loon_Once_Upon_A_Time_in_Mumbai_Emraan_Hashmi_Prachi_Pritam_Mohit_Chauhan_jl3sgt.mp3" },
     ],
 
     english: [
