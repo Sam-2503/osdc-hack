@@ -345,7 +345,7 @@ export const playlists = {
         title: "You Belong With Me",
         year: 2008,
         singer: "Taylor Swift",
-        src: "/https://res.cloudinary.com/dsplnfii2/video/upload/v1752396742/You_Belong_With_Me_ybmxhz.ogg",
+        src: "https://res.cloudinary.com/dsplnfii2/video/upload/v1752396742/You_Belong_With_Me_ybmxhz.ogg",
       },
       {
         title: "Snow (Hey Oh)",
