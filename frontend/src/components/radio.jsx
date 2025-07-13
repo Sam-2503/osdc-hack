@@ -18,6 +18,14 @@ function shuffle(array) {
 }
 
 export default function Radio({ decade, setCurrentSong, setStationKey }) {
+
+
+// Load the sound once when component mounts
+useEffect(() => {
+  maxVolSound.current = new Audio("/max_sound.wav");
+  maxVolSound.current.volume = 0.6;
+}, []);
+
     const [powerOn, setPowerOn] = useState(false);
     useEffect(() => {
         // Sync initial power state with SongI
@@ -27,6 +35,14 @@ export default function Radio({ decade, setCurrentSong, setStationKey }) {
     const [stationIndex, setStationIndex] = useState(
         parseInt(localStorage.getItem("stationIndex")) || 0
     );
+    const prevVolumeRef = useRef(0.5); 
+    const maxVolSound = useRef(null);
+    const userInitiatedVolumeChange = useRef(false);
+
+const lastVolume = useRef(0);
+const plusClicked = useRef(false);
+
+
     const [message, setMessage] = useState("");
     const [songIndex, setSongIndex] = useState(0);
     const [shuffledPlaylist, setShuffledPlaylist] = useState([]);
@@ -44,6 +60,8 @@ export default function Radio({ decade, setCurrentSong, setStationKey }) {
         const shuffled = shuffle(songs);
         setShuffledPlaylist(shuffled);
         setSongIndex(0);
+  plusClicked.current = false;
+
     }, [decade, stationIndex]);
 
     // Play song when required conditions change
@@ -108,6 +126,10 @@ export default function Radio({ decade, setCurrentSong, setStationKey }) {
             const newState = !prev;
             setMessage(newState ? "Power On" : "Power Off");
             if (!newState) stopSong();
+                plusClicked.current = false;
+                userInitiatedVolumeChange.current = false;
+
+
             // Notify SongInfo about power state
             window.dispatchEvent(
                 new CustomEvent("radio-power", { detail: newState })
@@ -115,18 +137,47 @@ export default function Radio({ decade, setCurrentSong, setStationKey }) {
             return newState;
         });
     };
+const handleVolume = (change) => {
+  if (change > 0) {
+    plusClicked.current = true;
+  } else {
+    plusClicked.current = false;
+  }
 
-    const handleVolume = (change) => {
-        setVolume((v) => {
-            const newVol = Math.min(1, Math.max(0, v + change * 0.1));
-            if (audioRef.current) audioRef.current.volume = newVol;
-            return newVol;
-        });
-    };
+  userInitiatedVolumeChange.current = true; // ✅ Mark this as manual
+
+  setVolume((prevVol) => {
+    const attemptedVol = prevVol + change * 0.1;
+    const clampedVol = Math.min(1, Math.max(0, attemptedVol));
+
+    if (audioRef.current) {
+      audioRef.current.volume = clampedVol;
+    }
+
+    if (
+      clampedVol === 1 &&
+      plusClicked.current &&
+      userInitiatedVolumeChange.current &&
+      maxVolSound.current
+    ) {
+      maxVolSound.current.currentTime = 0;
+      maxVolSound.current.play();
+    }
+
+    prevVolumeRef.current = clampedVol;
+    return clampedVol;
+  });
+
+  userInitiatedVolumeChange.current = false; // ✅ Reset after use
+};
 
     const handleTune = (dir) => {
         const next = stationIndex + dir;
         if (next >= 0 && next < frequencies.length) {
+                plusClicked.current = false;
+                userInitiatedVolumeChange.current = false;
+
+
             setStationIndex(next);
         }
     };

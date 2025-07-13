@@ -2,8 +2,8 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App.jsx";
 
-import "./App.css";
-import "nes.css/css/nes.min.css";
+import './App.css';
+import 'nes.css/css/nes.min.css';
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <App />
