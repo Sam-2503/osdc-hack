@@ -23,12 +23,12 @@ export default function Radio({ decade, setCurrentSong, setStationKey }) {
 // Load the sound once when component mounts
 useEffect(() => {
   maxVolSound.current = new Audio("/max_sound.wav");
-
   maxVolSound.current.volume = 0.6;
 }, []);
 
     const [powerOn, setPowerOn] = useState(false);
     useEffect(() => {
+        // Sync initial power state with SongI
         window.dispatchEvent(new CustomEvent("radio-power", { detail: powerOn }));
     }, []); // Only run on mount
     const [volume, setVolume] = useState(0.5);

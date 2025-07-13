@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export function Sidebar() {
   const [likedStations, setLikedStations] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
 
   function refreshFavourites() {
     const stations = [];
@@ -29,9 +31,9 @@ export function Sidebar() {
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="fixed bottom-10 left-4 px-5 py-3 
-        bg-green-500 text-white font-bold rounded-full 
-        shadow-lg hover:bg-green-400 hover:shadow-green-300 
-        transition-all duration-300 ease-in-out z-50 sm:left-6 md:left-10"
+          bg-green-500 text-white font-bold rounded-full 
+          shadow-lg hover:bg-green-400 hover:shadow-green-300 
+          transition-all duration-300 ease-in-out z-50 sm:left-6 md:left-10"
       >
         Favourites
       </button>
@@ -47,10 +49,10 @@ export function Sidebar() {
       {/* Sidebar */}
       <div
         className={`fixed top-0 left-0 h-full w-80 p-4 flex flex-col justify-between
-        bg-blue-300/50 text-black backdrop-blur-md 
-        rounded-r-2xl shadow-lg z-50 transition-transform duration-300 ${
-          isOpen ? "translate-x-0" : "-translate-x-full"
-        }`}
+          bg-blue-300/50 text-black backdrop-blur-md 
+          rounded-r-2xl shadow-lg z-50 transition-transform duration-300 ${
+            isOpen ? "translate-x-0" : "-translate-x-full"
+          }`}
       >
         {/* Top Section */}
         <div>
@@ -60,7 +62,10 @@ export function Sidebar() {
           ) : (
             <ul className="space-y-2">
               {likedStations.map((station, idx) => (
-                <li key={idx} className="bg-white/80 rounded px-3 py-1 text-sm">
+                <li
+                  key={idx}
+                  className="bg-white/80 rounded px-3 py-1 text-sm"
+                >
                   {station}
                 </li>
               ))}
@@ -71,8 +76,20 @@ export function Sidebar() {
         {/* Divider + Footer */}
         <div className="mt-6">
           <hr className="border-black/40 mb-3" />
-          <div className="flex justify-end text-xs text-right text-black/80">
-            <div className="text-[0.65rem]">
+          <div className="flex justify-between items-center text-xs text-black/80">
+            {/* About Us Link */}
+            <button
+              onClick={() => {
+                setIsOpen(false);
+                navigate("/about");
+              }}
+              className="text-[0.65rem] underline hover:text-black/60 transition-all"
+            >
+              About Us
+            </button>
+
+            {/* Team Name */}
+            <div className="text-[0.65rem] text-right">
               <span className="block">&copy; 2025</span>
               <span className="block font-semibold">The Travellers</span>
             </div>

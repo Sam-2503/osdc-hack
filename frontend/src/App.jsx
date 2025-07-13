@@ -1,10 +1,13 @@
 import { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NotesApp from "./components/notesapp";
 import SongInfo from "./components/songInfo";
 import Dj from "./components/dj";
 import Radio from "./components/radio";
 import { Sidebar } from "./components/sidebar";
+import About from "./About"; // 🔹 Create this page
 import "./App.css";
+
 import bg1970 from "./assets/bg-1970.gif";
 import bg1980 from "./assets/bg-1980.gif";
 import bg1990 from "./assets/bg-1990.gif";
@@ -21,7 +24,7 @@ const gifMap = {
   2020: bg2020,
 };
 
-function App() {
+function HomePage() {
   const [decade, setDecade] = useState(1990);
   const [currentSong, setCurrentSong] = useState({
     title: "",
@@ -40,7 +43,6 @@ function App() {
             alt={`Background for ${decade}s`}
             className="w-full h-full object-cover transition-opacity duration-500"
           />
-          {/* Optional overlay to improve readability */}
           <div className="absolute top-0 left-0 w-full h-full bg-black opacity-30"></div>
         </div>
 
@@ -65,6 +67,17 @@ function App() {
         </div>
       </div>
     </div>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </Router>
   );
 }
 
