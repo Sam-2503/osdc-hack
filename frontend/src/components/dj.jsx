@@ -9,7 +9,7 @@ export default function Dj({ decade }) {
 
   const fetchAIMessage = async () => {
     setLoading(true);
-    const API_KEY = "cTlEJEptX5fHzDoNjKd3KtiColjpFTn0cYPsOjEq";
+    const API_KEY = import.meta.env.VITE_COHERE_API_KEY;
     const prompt = `You are a radio DJ in the year ${decade}. Say something fun and catchy also take the name of last two letters of years like 90s,80s in no more than 10 words.`;
 
     try {
