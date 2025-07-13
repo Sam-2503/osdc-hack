@@ -27,7 +27,10 @@ Tune in, leave notes, and enjoy a digital throwback to the days of analog dials 
   Power on/off, tune stations, and adjust the volume just like a real radio.
 
 - **Now Playing Info:**  
-  See the current song, artist, and year in a stylish info bar. Heart your favorite stations!
+  See the current song and artist in a stylish info bar. Heart your favorite stations!
+  
+- **Favorites Toggle:**  
+  Heart your favorite stations with a single click—toggle between red and white hearts, and see confirmation messages like “Station favorited!” when the radio is powered on.
 
 - **Live Notes:**  
   Leave messages for other listeners and see the latest note in real time.
