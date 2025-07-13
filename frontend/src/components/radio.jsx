@@ -22,7 +22,8 @@ export default function Radio({ decade, setCurrentSong, setStationKey }) {
 
 // Load the sound once when component mounts
 useEffect(() => {
-  maxVolSound.current = new Audio("./public/max_sound.wav");
+  maxVolSound.current = new Audio("/max_sound.wav");
+
   maxVolSound.current.volume = 0.6;
 }, []);
 

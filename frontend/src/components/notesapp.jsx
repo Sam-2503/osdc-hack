@@ -47,7 +47,14 @@ export default function NotesApp() {
   return (
     <div className="p-4 text-white">
       <div className="fixed bottom-10 left-1/2 -translate-x-1/2">
-        <h2 className="text-xl font-bold mb-4">Radio Notes</h2>
+        <h2 className="text-xl font-bold mb-4" style={{
+          textShadow: `
+      -1px -1px 0 #000,
+       1px -1px 0 #000,
+      -1px  1px 0 #000,
+       1px  1px 0 #000
+    `,
+        }}>Radio Notes</h2>
 
         <input
           type="text"
@@ -55,6 +62,14 @@ export default function NotesApp() {
           onChange={(e) => setNote(e.target.value)}
           placeholder="Type your note..."
           className="text-white px-2 py-1 rounded mr-2"
+          style={{
+            textShadow: `
+      -1px -1px 0 #000,
+       1px -1px 0 #000,
+      -1px  1px 0 #000,
+       1px  1px 0 #000
+    `,
+          }}
         />
         <button
           onClick={handleSubmit}
@@ -64,7 +79,14 @@ export default function NotesApp() {
         </button>
       </div>
       <div className="fixed top-36 left-4 w-md">
-        <h3 className="font-semibold text-lime-400">📻 Latest Note:</h3>
+        <h3 className="font-semibold text-lime-400" style={{
+          textShadow: `
+      -1px -1px 0 #000,
+       1px -1px 0 #000,
+      -1px  1px 0 #000,
+       1px  1px 0 #000
+    `,
+        }}>📻 Latest Note:</h3>
         <p className="mt-2">{latestNote || "Fetching..."}</p>
       </div>
     </div>
